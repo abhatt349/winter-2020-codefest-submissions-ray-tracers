@@ -1,21 +1,21 @@
 # Hunter CS Winter 2019 CodeFest
 
 # Team Info
-### Team name:
+### Team name: Ray Tracers
 ### Team members (format: GitHub username, last name, first name):
-- 
-- 
-- 
+- @andymina, Mina, Andy
+- @kushendra1, Ramrup, Kushendra
+- @ama3489, Ma, Alyssa
 -
-- 
-- 
+-
+-
 
 ### Group info (check all that apply - add an X in the [ ])
 - [ ] We are a CUNY2X bootcamp cohort team
-- [ ] We are a Daedalus / Google Mentored group
+- [x] We are a Daedalus / Google Mentored group
 - [ ] We are a beginner group (only completed CSCI 12700)
 - [ ] We plan to attend the final event on 1/31 at Google (time TBD)
-- As attendance is highly important, if you checked the above box but only some members will be attending, please indicate the number here: ___
+- As attendance is highly important, if you checked the above box but only some members will be attending, please indicate the number here: _0_
 
 # General Info
 ## Theme: Create a Passion Project - Make something you've always wanted to build!
@@ -23,7 +23,7 @@ Think of something you've always wanted to make and bring to life, and do it! To
 -   Productivity
 -   Social Good
 -   Education
-    
+
 Please incorporate it into your project, and we hope to see new, exciting, and innovative projects!
 
 *__If you have any questions about an idea and whether it's within the scope, please ask us as soon as possible.__*
@@ -34,7 +34,7 @@ Please incorporate it into your project, and we hope to see new, exciting, and i
 2. All projects must be completed by groups of 2-6 people from Hunter College.
 3. Submissions will be evaluated starting on **Monday, January 27 at 7:00am**.
 4. Projects must be able to be run by the organizers by the submission deadline.
-5. Please add a markdown formatted file named INSTALL.md with instructions on how to install and run your project. 
+5. Please add a markdown formatted file named INSTALL.md with instructions on how to install and run your project.
 6. Projects can be standalone programs, web applications, Android apps,  iOS apps, etc.
 7. **No hardware projects!** You may not use additional hardware other than what is on a typical laptop for a desktop / web application and a typical phone for a phone app.
 8. Good luck and have fun!
