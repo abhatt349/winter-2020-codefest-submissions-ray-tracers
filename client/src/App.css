@@ -24,7 +24,11 @@ nav{
 }
 
 .loginbox{
-  height: 300px;
-  width: 600 px;
-  background: white;
+  height: 400px;
+  width: 600px;
+  background: #1D1D1D;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
 }
