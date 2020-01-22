@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css'
 import Signup from './Signup';
 import Emailpassbox from './Emailpassbox';
+import Confirmbutton from './Confirmbutton';
+import Textbelowlogin from './Textbelowlogin';
 
 function Signupbox(props){
     return(
@@ -11,6 +13,8 @@ function Signupbox(props){
                 <Emailpassbox name = "Email"/>
                 <Emailpassbox name = "Password"/>
                 <Emailpassbox name = "Confirm Password"/>
+                <Confirmbutton name = "Sign Up"/>
+                <Textbelowlogin name = "Already have an account? " name1 = "Log in."/>
             </div>
         </div>
     );

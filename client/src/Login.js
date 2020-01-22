@@ -1,12 +1,19 @@
 import React from 'react'
-import Loginbox from './Loginbox'
 import './App.css'
 import Emailpassbox from './Emailpassbox'
+import Confirmbutton from './Confirmbutton'
+import Textbelowlogin from './Textbelowlogin'
 
 function Login(){
     return(
         <div>
-            <Loginbox/>
+            <div className = "loginbox">
+                <h1>Grade Wizard</h1>
+                <Emailpassbox name = "Email"/>
+                <Emailpassbox name = "Password"/>
+                <Confirmbutton name = "Login"/>
+                <Textbelowlogin name = "Don't have an account? " name1 = "Sign up."/>
+            </div>
         </div>
     )
 }
