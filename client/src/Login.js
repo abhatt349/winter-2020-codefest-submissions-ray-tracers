@@ -1,5 +1,6 @@
 import React from 'react'
 import Loginbox from './Loginbox'
+import './App.css'
 
 function Login(){
     return(

@@ -24,8 +24,22 @@ nav{
 }
 
 .loginbox{
-  height: 400px;
-  width: 600px;
+  height: 580px;
+  width: 1000px;
+  background: #1D1D1D;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginbox-topstyle{
+  font-size: 90px;
+}
+
+.signupbox{
+  height: 580px;
+  width: 1000px;
   background: #1D1D1D;
   align-items: center;
   justify-content: space-around;

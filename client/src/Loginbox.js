@@ -5,7 +5,10 @@ import Login from './Login';
 function Loginbox(props){
     return(
         <div className = "loginbox">
-            <h3>This is a test</h3>
+            <div>
+                
+                <h3>This is a test</h3>
+            </div>
         </div>
     );
 }

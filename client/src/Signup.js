@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import './App.css'
+import Signup from './Signup';
 
-function Signup(){
+function Signupbox(props){
     return(
-        <div>
-            <h1>Signup</h1>
+        <div className = "signupbox">
+            <div>
+                <h3>Signup</h3>
+            </div>
         </div>
-    )
+    );
 }
 
-export default Signup;
+export default Signupbox;
