@@ -13,6 +13,18 @@ function Nav(){
                 <Link style = {navStyle} to = '/Home'>
                     <li>Home</li>
                 </Link>
+                
+                <Link style = {navStyle} to = '/Class'>
+                    <li>Class</li>
+                </Link>
+
+                <Link style = {navStyle} to = '/Login'>
+                    <li>Login</li>
+                </Link>
+
+                <Link style = {navStyle} to = '/Signup'>
+                    <li>Signup</li>
+                </Link>
             </ul>
         </nav>
             
