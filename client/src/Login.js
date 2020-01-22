@@ -12,7 +12,7 @@ function Login(){
                 <Emailpassbox name = "Email"/>
                 <Emailpassbox name = "Password"/>
                 <Confirmbutton name = "Log In"/>
-                <Textbelowlogin name = "Don't have an account? " name1 = "Sign up."/>
+                <Textbelowlogin name = "Don't have an account? " name1 = "Sign up." link = "http://localhost:3002/Signup"/>
             </div>
         </div>
     )

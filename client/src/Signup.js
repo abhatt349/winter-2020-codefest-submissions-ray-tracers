@@ -14,7 +14,7 @@ function Signupbox(props){
                 <Emailpassbox name = "Password"/>
                 <Emailpassbox name = "Confirm Password"/>
                 <Confirmbutton name = "Sign Up"/>
-                <Textbelowlogin name = "Already have an account? " name1 = "Log in."/>
+                <Textbelowlogin name = "Already have an account? " name1 = "Log in." link = "http://localhost:3002/Login"/>
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ function Textbelowlogin(props){
             <div>
                 <p>{props.name}<a 
                     className = "textbelowlogin-link"
-                    href = "http://localhost:3002/Signup"
+                    href = {props.link}
                     target = "_blank"
                     rel = "noopener no referrer"
                     >
