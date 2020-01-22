@@ -20,7 +20,8 @@ const db = require("./config").MONGO_KEY;
 mongoose                    //library that was imported
   .connect(
     db,
-    { useNewUrlParser: true}
+    { useNewUrlParser: true,
+      useUnifiedTopology: true }
   )
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
@@ -28,4 +29,4 @@ mongoose                    //library that was imported
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port that server will run on
                                        //allows files to be run on server
 
-app.listen(port, () => console.log('Server up and running on port ${port} !')); //
+app.listen(port, () => console.log(`Server up and running on port ${port}!`)); //app will listen on this PORT
