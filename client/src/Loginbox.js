@@ -6,11 +6,9 @@ import Emailpassbox from './Emailpassbox';
 function Loginbox(props){
     return(
         <div className = "loginbox">
-            <div>
-                <h1>Grade Wizard</h1>
-                <Emailpassbox/>
-                <Emailpassbox/>
-            </div>
+            <h1>Grade Wizard</h1>
+            <Emailpassbox name = "Email"/>
+            <Emailpassbox name = "Password"/>
         </div>
     );
 }

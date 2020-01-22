@@ -6,7 +6,7 @@ function Emailpassbox(props){
     return(
         <div className = "emailpassbox">
             <div>
-                <h3>Email</h3>
+                <h3>{props.name}</h3>
             </div>
         </div>
     );

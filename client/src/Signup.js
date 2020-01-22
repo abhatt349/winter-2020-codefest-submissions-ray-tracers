@@ -8,7 +8,9 @@ function Signupbox(props){
         <div className = "signupbox">
             <div>
                 <h1>Grade Wizard</h1>
-                <Emailpassbox/>
+                <Emailpassbox name = "Email"/>
+                <Emailpassbox name = "Password"/>
+                <Emailpassbox name = "Confirm Password"/>
             </div>
         </div>
     );
