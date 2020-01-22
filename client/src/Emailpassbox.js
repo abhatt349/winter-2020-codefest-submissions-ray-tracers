@@ -2,14 +2,14 @@ import React from 'react';
 import './App.css'
 import Login from './Login';
 
-function Loginbox(props){
+function Emailpassbox(props){
     return(
-        <div className = "loginbox">
+        <div className = "emailpassbox">
             <div>
-                <h1>Login</h1>
+                <h1>Email</h1>
             </div>
         </div>
     );
 }
 
-export default Loginbox;
+export default Emailpassbox;

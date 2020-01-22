@@ -6,7 +6,7 @@ function Signupbox(props){
     return(
         <div className = "signupbox">
             <div>
-                <h3>Signup</h3>
+                <h1>Signup</h1>
             </div>
         </div>
     );
