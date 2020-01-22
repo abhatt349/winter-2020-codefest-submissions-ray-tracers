@@ -11,7 +11,7 @@ function Login(){
                 <h1>Grade Wizard</h1>
                 <Emailpassbox name = "Email"/>
                 <Emailpassbox name = "Password"/>
-                <Confirmbutton name = "Login"/>
+                <Confirmbutton name = "Log In"/>
                 <Textbelowlogin name = "Don't have an account? " name1 = "Sign up."/>
             </div>
         </div>
