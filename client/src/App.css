@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-  
+  background: #121212;
+  color: #63A5DA;
+  min-height: 100vh;
 }
 
 nav{
@@ -9,7 +11,7 @@ nav{
   align-items: center;
   min-height: 10vh;
   background: #121212;
-  color: white;
+  color: #63A5DA;
 }
 
 .navlink{
@@ -18,4 +20,5 @@ nav{
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  color: #63A5DA
 }
