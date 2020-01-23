@@ -1,6 +1,9 @@
 const express = require("express");       //pulling the reuired dependency express
 const mongoose = require("mongoose");     //pulling the reuired dependency mongoose
 const bodyParser = require("body-parser");//pulling the reuired dependency bodyparser
+const passport = require("passport");
+
+const users = require("./api/users");
 
 const app = express();           //setting up app to run
 
@@ -25,6 +28,15 @@ mongoose                    //library that was imported
   )
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config
+require("./passport")(passport);
+
+// Routes 
+app.use("/api/users", users);
 
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port that server will run on
                                        //allows files to be run on server
