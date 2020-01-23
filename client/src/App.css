@@ -22,3 +22,9 @@ nav{
   list-style: none;
   color: #63A5DA
 }
+
+.loginbox{
+  height: 300px;
+  width: 600 px;
+  background: white;
+}
