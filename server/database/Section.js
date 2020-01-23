@@ -4,10 +4,7 @@ class Section {
     this.name = name;
     this.grade = grade;
     this.weight = weight;
-    this.assignments = [
-      {"Assignment #1": 100},
-      {"Assignment #2": 50}
-    ]
+    this.assignments = [{}]
   }
 }
 

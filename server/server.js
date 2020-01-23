@@ -1,33 +1,27 @@
-const express = require("express");       //pulling the reuired dependency express
-const mongoose = require("mongoose");     //pulling the reuired dependency mongoose
-const bodyParser = require("body-parser");//pulling the reuired dependency bodyparser
+// import required dependencies
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 const passport = require("passport");
 
+// import api and keys
 const users = require("./api/users");
+const keys = require('./config');
 
-const app = express();           //setting up app to run
+// init server
+const app = express();
 
 // Bodyparser middleware, has access to required functions to do work before reaching server
-app.use(
-  bodyParser.urlencoded({
-    extended: false
-  })
-);
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//DB Config
-//Pulling in the MongoURI from keys.js and connecting to the database
-const db = require("./config").MONGO_KEY;
-
-//Connect to MongoDB
-mongoose                    //library that was imported
-  .connect(
-    db,
-    { useNewUrlParser: true,
-      useUnifiedTopology: true }
-  )
-  .then(() => console.log("MongoDB successfully connected"))
-  .catch(err => console.log(err));
+// Connect to database
+const options = { useNewUrlParser: true, useUnifiedTopology: true };
+mongoose.connect(keys.MONGO_KEY, options).then(() => {
+  console.log("MongoDB successfully connected")
+}).catch((err) => {
+  console.log(err)
+});
 
 // Passport middleware
 app.use(passport.initialize());
@@ -35,10 +29,8 @@ app.use(passport.initialize());
 // Passport config
 require("./passport")(passport);
 
-// Routes 
+// API routes
 app.use("/api/users", users);
+const port = process.env.PORT || 5000;
 
-const port = process.env.PORT || 5000; // process.env.port is Heroku's port that server will run on
-                                       //allows files to be run on server
-
-app.listen(port, () => console.log(`Server up and running on port ${port}!`)); //app will listen on this PORT
+app.listen(port, () => console.log(`Server up and running on port ${port}!`));
