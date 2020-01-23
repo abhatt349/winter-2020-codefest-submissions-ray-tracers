@@ -17,7 +17,7 @@ const User = require("../database/User.js") ;   //loading the model from the use
 // @desc Register users//
 // @access Public
 
-router.post("../validation/register", (req, res) => {
+router.post("/register", (req, res) => {
   //form validation
 
 const { errors, isValid } = validateRegisterInput(Req.body); //pull the errors and isValid vars from the validateRegisterInput func and checks input validation
@@ -56,7 +56,7 @@ User.findOne({ email: req.body.email }).then(user => {  //a method of MongoDB th
 // @route POST login/../api/users
 // @desc Login user and return JWT token
 // @access Public
-router.post("../validation/login", (req, res) => {
+router.post("/login", (req, res) => {
   //form validation
 
 const { errors, isValid } = validateLoginInput(req.body); //pull the errors and isValid vars from the validateLogInput func and checks input validation
