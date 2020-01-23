@@ -108,3 +108,4 @@ const email = req.body.email;     //stores entered email
     });
   });
 });
+module.exports = router;
