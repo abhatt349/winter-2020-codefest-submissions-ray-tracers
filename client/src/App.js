@@ -7,29 +7,35 @@ import Signup from './Signup';
 import Nav from './Nav';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {Link} from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 
-function App() {
-  return (
-    <Router>
-      <div className = "App">
-        <Nav />
-          <Switch>
-            <Route path = "/Class" 
-              component = {Class}
-            />
-            <Route path = "/Login" 
-              component = {Login}
-            />
-            <Route path = "/Home" 
-              component = {Home}
-            />
-            <Route path = "/Signup" 
-              component = {Signup}
-            />
-          </Switch>
-      </div>
-    </Router>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <Nav/>
+            <Switch>
+              <Route
+                exact path="/class"
+                component={Class}/>
+              <Route
+                exact path="/login"
+                component={Login}/>
+              <Route
+                exact path="/home"
+                component={Home}/>
+              <Route
+                exact path="/signup"
+                component={Signup}/>
+            </Switch>
+          </div>
+        </Router>
+      </Provider>
+    );
+  }
 }
 
 export default App;
