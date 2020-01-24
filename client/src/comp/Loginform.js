@@ -8,12 +8,12 @@ class Loginform extends React.Component{
             email: '',
             password: ''
         };
-    
+
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
-    
+
       handleEmailChange(event) {
         this.setState({email: event.target.value});
       }
@@ -21,7 +21,7 @@ class Loginform extends React.Component{
       handlePasswordChange(event) {
         this.setState({password: event.target.value});
       }
-    
+
       handleSubmit(event) {
         alert('Email submitted: ' + this.state.email);
         alert('Password submitted: ' + this.state.password);
@@ -31,22 +31,23 @@ class Loginform extends React.Component{
       onSubmit = () => {
         console.log(this.state)
       }
-    
+
       render() {
         return (
                 <form onSubmit={this.handleSubmit}>
-                    <input type = "text" 
-                        email={this.state.email} 
-                        onChange={this.handleEmailChange} 
+                    <input type = "text"
+                        email={this.state.email}
+                        onChange={this.handleEmailChange}
                         placeholder = {this.props.name}
                     />
-                    <input type = "password" 
-                        password={this.state.password} 
-                        onChange={this.handlePasswordChange} 
+                    <input type = "password"
+                        password={this.state.password}
+                        onChange={this.handlePasswordChange}
                         placeholder = {this.props.name1}
                     />
-                    <input type="submit" 
-                        value= {this.props.name2} 
+                    <input
+                      type="submit"
+                      value= {this.props.name2} 
                         onClick = {() => this.onSubmit()}
                     />
                 </form>
