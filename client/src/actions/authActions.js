@@ -12,7 +12,7 @@ import {
 
 // Register User
 export const registerUser = (userData, history) => (dispatch) => {
-  axios.post(API+"/users/register", userData).then((res) => {
+  axios.post(API + "/users/register", userData).then((res) => {
     history.push("/login")
   }).catch((err) => {
       dispatch({
@@ -24,7 +24,7 @@ export const registerUser = (userData, history) => (dispatch) => {
 
 // Login - get user token
 export const loginUser = (userData) => (dispatch) => {
-  axios.post("/api/users/login", userData).then((res) => {
+  axios.post(API + "/users/login", userData).then((res) => {
       // Save to localStorage
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
