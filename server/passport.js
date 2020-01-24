@@ -14,7 +14,7 @@ opts.secretOrKey = keys.SECRET_OR_KEY;
   if the user is found then return that user, otherwise return false
   throws an error if the strategy doesn't work.
 */
-module.expors = (passport) => {
+module.exports = (passport) => {
   passport.use(
     new JwtStrategy(opts, (jwt_payload, done) => {
       User.findById(jwt_payload.id).then((user) => {
