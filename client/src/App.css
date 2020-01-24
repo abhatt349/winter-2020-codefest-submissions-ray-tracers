@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
   background: #121212;
   color: #63A5DA;
@@ -80,7 +80,7 @@ nav{
   display: flex;
   font-size: 30px;
   border-radius: 5px;
-  align-items: center;  
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   flex-direction: column;
@@ -88,7 +88,7 @@ nav{
 }
 
 .confirmbutton:hover{
-  background-color: #338AC3; 
+  background-color: #338AC3;
   color: white;
 }
 
@@ -102,7 +102,7 @@ nav{
   color: #338AC3;
 }
 
-input{
+.submit-button{
   background-color: #63A5DA;
   color: white;
   width: 380px;
@@ -111,7 +111,7 @@ input{
   display: flex;
   font-size: 30px;
   border-radius: 5px;
-  align-items: center;  
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   flex-direction: column;
@@ -120,7 +120,7 @@ input{
 }
 
 input:hover{
-  background-color: #338AC3; 
+  background-color: #338AC3;
   color: white;
 }
 
@@ -168,5 +168,4 @@ input[type=password]{
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-}
-
+} */
