@@ -105,3 +105,18 @@ nav{
 .textbelowlogin-link{
   color: #338AC3;
 }
+
+.loginform{
+  border: 2px pink;
+  color: pink;
+  padding: 2rem;
+}
+.loginform[type="text"]{
+  color: pink;
+  background: blue;
+}
+
+input[type=text]{
+  width: 100%;
+  margin: 8px 0;
+}

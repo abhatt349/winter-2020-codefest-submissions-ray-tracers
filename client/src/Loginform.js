@@ -1,6 +1,8 @@
 import React from 'react';
+import './App.css';
 
-export default class Loginform extends React.Component{
+class Loginform extends React.Component{
+    
     state = {
         email: '',
         password: '',
@@ -12,34 +14,42 @@ export default class Loginform extends React.Component{
         });
     };
 
-    onSubmit = (e) => {
+    onSubmit = e => {
         e.preventDefault();
-        this.props.onSubmit();
-        console.log(this.state);
-    }
+        this.props.onSubmit(this.state);
+        this.setState({
+            email: '',
+            password: '',
+        })
+    };
 
     render(){
         return(
-            <form>
-                <input 
-                    name = "email"
-                    placeholder = "Email" 
-                    value = {this.state.email} 
-                    onChange = {e => this.change(e)}
-                />
-                <br />
-                <input 
-                    name = "password"
-                    type = "password"
-                    placeholder = "Password" 
-                    value = {this.state.password} 
-                    onChange = {e => this.change(e)}
-                />
-                <br />
-                <button onClick = {e => this.onSubmit(e)}>Submit</button>
-            </form>
-           
+            <div>
+                <div className = "loginform">
+                    <form>
+                        <input 
+                            name = "email"
+                            placeholder = "Email" 
+                            value = {this.state.email} 
+                            onChange = {e => this.change(e)}
+                        />
+                        <br />
+                        <input 
+                            name = "password"
+                            type = "password"
+                            placeholder = "Password" 
+                            value = {this.state.password} 
+                            onChange = {e => this.change(e)}
+                        />
+                        <br />
+                        <button onClick = {e => this.onSubmit(e)}>Submit</button>
+                    </form>
+                </div>
+            </div>
         )
     }
 
 }
+
+export default Loginform;
