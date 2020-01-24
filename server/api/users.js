@@ -18,12 +18,14 @@ const User = require("../database/User.js");
 // @desc Register users
 // @access Public
 router.post("/register", (req, res) => {
+  console.log(req.body);
   // form validation
   const { errors, isValid } = validateRegisterInput(req.body);
 
   //Check validation
   if (!isValid) {
      // throws the "bad request" error
+     console.log(errors);
     return res.status(400).json(errors);
   }
 

@@ -50,5 +50,6 @@
 }
 
 .text-error {
-  color: #C74B49
+  color: #C74B49;
+  font-size: 1rem;
 }

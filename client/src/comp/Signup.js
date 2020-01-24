@@ -18,6 +18,12 @@ class Signup extends React.Component {
     };
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/");
@@ -39,6 +45,8 @@ class Signup extends React.Component {
       password: this.state.password,
       password2: this.state.confirmpassword
     }
+
+    console.log(user);
 
     this.props.registerUser(user, this.props.history);
   }
