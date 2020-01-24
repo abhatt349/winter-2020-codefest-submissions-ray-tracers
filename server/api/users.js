@@ -97,9 +97,9 @@ router.post("/login", (req, res) => {
         jwt.sign(payload, keys.SECRET_OR_KEY, exp, (err, token) => {
           // Check if err
           if (err)
-            res.status(500).json(err);
+            return res.status(500).json(err);
           else
-            res.json({ success: true, token: "Bearer " + token });
+            return res.json({ success: true, token: "Bearer " + token });
         });
       } else {
         return res.status(400).json({ password: "Password Incorrect. Smh no wonder you need a grade calculator" });

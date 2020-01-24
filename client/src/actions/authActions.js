@@ -13,7 +13,7 @@ import {
 // Register User
 export const registerUser = (userData, history) => (dispatch) => {
   axios.post(API + "/users/register", userData).then((res) => {
-    history.push("/")
+    history.push("/login")
   }).catch((err) => {
     console.log(err);
       dispatch({
