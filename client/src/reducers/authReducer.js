@@ -10,7 +10,7 @@ const initialState = {
   loading: false
 };
 
-export default function(state = intialState, action) {
+export default function(state = initialState, action) {
   // Define how the state should change based on actions using a switch statement
   switch (action.type) {
     case SET_CURRENT_USER:

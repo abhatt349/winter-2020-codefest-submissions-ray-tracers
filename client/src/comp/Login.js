@@ -1,5 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { loginUser } from '../actions/authActions';
 import './form.css';
 
 class Login extends React.Component {
@@ -7,8 +10,21 @@ class Login extends React.Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      errors: {}
     };
+  }
+
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
   }
 
   handleChange = (event) => {
@@ -21,11 +37,15 @@ class Login extends React.Component {
     event.preventDefault();
     console.log("Submitted form");
 
-    const data = this.state;
-    console.log(data);
+    const user = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    this.props.loginUser(user);
   }
 
   render(){
+    const { errors } = this.state;
     return (
       <div className="container-fluid">
         <div className="form-container px-5 py-3 my-auto rounded">
@@ -41,6 +61,7 @@ class Login extends React.Component {
               autofill="false"
               value={this.state.email}
               onChange={this.handleChange}/>
+            {errors.email ? <span className="text-error lead">{errors.email}</span> : null}
 
             <input
               id="password"
@@ -50,6 +71,7 @@ class Login extends React.Component {
               className="input form-control my-2"
               value={this.state.password}
               onChange={this.handleChange}/>
+            {errors.password ? <span className="text-error lead">{errors.password}</span> : null}
 
             <button
               className="rounded btn btn-lg btn-block action-button my-4"
@@ -68,4 +90,15 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+})
+
+export default connect(mapStateToProps, { loginUser })(withRouter(Login));

@@ -2,7 +2,7 @@
 import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
-import API from "./types";
+import { API } from "./types";
 
 import {
   GET_ERRORS,
