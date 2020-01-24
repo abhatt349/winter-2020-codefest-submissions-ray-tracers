@@ -11,7 +11,8 @@ class Login extends React.Component {
     this.state = {
       email: '',
       password: '',
-      errors: {}
+      errors: {},
+      logged_in: false
     };
   }
 
@@ -42,10 +43,12 @@ class Login extends React.Component {
       password: this.state.password
     };
     this.props.loginUser(user);
+    this.setState({ logged_in: true });
   }
 
   render(){
     const { errors } = this.state;
+
     return (
       <div className="container-fluid">
         <div className="form-container px-5 py-3 my-auto rounded">
