@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const cors = require('cors');
 
 // import api and keys
 const users = require("./api/users");
@@ -10,6 +11,9 @@ const keys = require('./config');
 
 // init server
 const app = express();
+
+// user cors middleware
+app.use(cors());
 
 // Bodyparser middleware, has access to required functions to do work before reaching server
 app.use(bodyParser.urlencoded({ extended: false }));
