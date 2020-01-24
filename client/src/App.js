@@ -13,12 +13,20 @@ function App() {
     <Router>
       <div className = "App">
         <Nav />
-        <Switch>
-          <Route path = "/Class" component = {Class}/>
-          <Route path = "/Login" component = {Login}/>
-          <Route path = "/Home" component = {Home}/>
-          <Route path = "/Signup" component = {Signup}/>
-        </Switch>
+          <Switch>
+            <Route path = "/Class" 
+              component = {Class}
+            />
+            <Route path = "/Login" 
+              component = {Login}
+            />
+            <Route path = "/Home" 
+              component = {Home}
+            />
+            <Route path = "/Signup" 
+              component = {Signup}
+            />
+          </Switch>
       </div>
     </Router>
   );

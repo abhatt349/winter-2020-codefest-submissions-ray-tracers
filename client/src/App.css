@@ -39,10 +39,6 @@ nav{
   border-radius: 10px;
 }
 
-.loginbox-topstyle{
-  font-size: 90px;
-}
-
 .signupbox{
   width: 1000px;
   height: 660px;
@@ -106,17 +102,71 @@ nav{
   color: #338AC3;
 }
 
-.loginform{
-  border: 2px pink;
-  color: pink;
-  padding: 2rem;
+input{
+  background-color: #63A5DA;
+  color: white;
+  width: 380px;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  font-size: 30px;
+  border-radius: 5px;
+  align-items: center;  
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+  justify-content: center;
+  border: 0px;
 }
-.loginform[type="text"]{
-  color: pink;
-  background: blue;
+
+input:hover{
+  background-color: #338AC3; 
+  color: white;
 }
 
 input[type=text]{
-  width: 100%;
+  width: 50%;
   margin: 8px 0;
+  color: #707070;
+  background: #323232;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 30px;
+  border: 0px solid #323232;
+  border-radius: 4px;
+  outline: none;
+  width: 750px;
+  height: 60px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+input[type=password]{
+  width: 50%;
+  margin: 8px 0;
+  color: #707070;
+  background: #323232;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 30px;
+  border: 0px solid #323232;
+  border-radius: 4px;
+  outline: none;
+  width: 750px;
+  height: 60px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
