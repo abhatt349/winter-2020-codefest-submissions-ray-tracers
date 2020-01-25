@@ -24,11 +24,11 @@ class Signup extends React.Component {
     }
   }
 
-  componentDidMount() {
-    if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/");
-    }
-  }
+  // componentDidMount() {
+  //   if (this.props.auth.isAuthenticated) {
+  //     this.props.history.push("/");
+  //   }
+  // }
 
   handleChange = (event) => {
     this.setState({

@@ -17,7 +17,7 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.auth.isAuthenticated) {
+    if (this.props.auth.isAuthenticated || this.state.logged_in) {
       this.props.history.push("/");
     }
   }
@@ -36,14 +36,12 @@ class Login extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Submitted form");
 
     const user = {
       email: this.state.email,
       password: this.state.password
     };
-    this.props.loginUser(user);
-    this.setState({ logged_in: true });
+    this.props.loginUser(user, this.props.history);
   }
 
   render(){
