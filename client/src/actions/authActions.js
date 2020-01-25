@@ -2,19 +2,20 @@
 import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
-import API from "./types";
 
 import {
   GET_ERRORS,
   SET_CURRENT_USER,
-  USER_LOADING
+  USER_LOADING,
+  API
 } from "./types";
 
 // Register User
 export const registerUser = (userData, history) => (dispatch) => {
-  axios.post(API+"/users/register", userData).then((res) => {
+  axios.post(API + "/users/register", userData).then((res) => {
     history.push("/login")
   }).catch((err) => {
+    console.log(err);
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data
@@ -23,8 +24,8 @@ export const registerUser = (userData, history) => (dispatch) => {
 };
 
 // Login - get user token
-export const loginUser = (userData) => (dispatch) => {
-  axios.post("/api/users/login", userData).then((res) => {
+export const loginUser = (userData, history) => (dispatch) => {
+  axios.post(API + "/users/login", userData).then((res) => {
       // Save to localStorage
       const { token } = res.data;
       localStorage.setItem("jwtToken", token);
@@ -34,6 +35,8 @@ export const loginUser = (userData) => (dispatch) => {
       const decoded = jwt_decode(token);
       // Set current user
       dispatch(setCurrentUser(decoded));
+      // redirect to Home
+      history.push("/")
     }).catch((err) => {
       dispatch({
         type: GET_ERRORS,

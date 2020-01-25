@@ -1,5 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { registerUser } from '../actions/authActions';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
 import './form.css';
 
 class Signup extends React.Component {
@@ -9,9 +13,22 @@ class Signup extends React.Component {
       name: '',
       email: '',
       password: '',
-      confirmpassword: ''
+      confirmpassword: '',
+      errors: {}
     };
   }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
+  // componentDidMount() {
+  //   if (this.props.auth.isAuthenticated) {
+  //     this.props.history.push("/");
+  //   }
+  // }
 
   handleChange = (event) => {
     this.setState({
@@ -21,13 +38,21 @@ class Signup extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Submitted form");
 
-    const data = this.state;
-    console.log(data);
+    const user = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password,
+      password2: this.state.confirmpassword
+    }
+
+    console.log(user);
+
+    this.props.registerUser(user, this.props.history);
   }
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="container-fluid">
         <div className="form-container px-5 py-3 my-auto rounded">
@@ -43,6 +68,7 @@ class Signup extends React.Component {
               autofill="false"
               value={this.state.name}
               onChange={this.handleChange}/>
+            {errors.name ? <span className="text-error lead">{errors.name}</span> : null}
 
             <input
               id="email"
@@ -52,6 +78,7 @@ class Signup extends React.Component {
               autofill="false"
               value={this.state.email}
               onChange={this.handleChange}/>
+            {errors.email ? <span className="text-error lead">{errors.email}</span> : null}
 
             <input
               id="password"
@@ -61,6 +88,7 @@ class Signup extends React.Component {
               className="input form-control my-2"
               value={this.state.password}
               onChange={this.handleChange}/>
+            {errors.password ? <span className="text-error lead">{errors.password}</span> : null}
 
             <input
               id="confirmpassword"
@@ -70,6 +98,7 @@ class Signup extends React.Component {
               className="input form-control my-2"
               value={this.state.confirmpassword}
               onChange={this.handleChange}/>
+            {errors.password2 ? <span className="text-error lead">{errors.password2}</span> : null}
 
             <button
               className="rounded btn btn-lg btn-block action-button my-4"
@@ -88,4 +117,15 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+Signup.propTypes = {
+  registerUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(mapStateToProps, { registerUser })(withRouter(Signup));
